@@ -26,6 +26,7 @@ public abstract class GameLevel extends World {
         door = new Door (this);
         lava = new Lava(this);
 
+        // Collision events between different bodies
         AlienEncounter enemy = new AlienEncounter(alien);
         alien.addCollisionListener(enemy);
         DoorEncounter end = new DoorEncounter(this,game);
@@ -36,6 +37,7 @@ public abstract class GameLevel extends World {
         lava.addCollisionListener(encounter);
     }
 
+    // Return type for the bodies
     public Alien getAlien() { return alien; }
     public void setAlien(Alien a){ alien = a; }
     public Ninja getNinja() { return ninja; }

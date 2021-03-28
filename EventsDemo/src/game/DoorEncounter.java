@@ -14,6 +14,8 @@ public class DoorEncounter implements CollisionListener {
         this.game = game;
     }
 
+    // When the ninja collides with the door, the current level is complete and the world goes to the
+    // next level
     @Override
     public void collide(CollisionEvent e) {
         if (e.getOtherBody() instanceof Ninja

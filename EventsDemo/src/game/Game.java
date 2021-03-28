@@ -47,8 +47,8 @@ public class Game {
         }
 
         // make a view
-        view = new GameView(level, level.getNinja(), 1000, 600);
-        view.setZoom(20);
+        view = new GameView(level, level.getGame(), 700, 600);
+        view.setZoom(16);
         view.setBack(level.paintBackground());
 
         shootController = new ShootController(view, level.getGame());
@@ -94,22 +94,25 @@ public class Game {
         level.start();
     }
 
+    // Pauses the current level
     public void pause(){
         level.stop();
         gameMusic.pause();
     }
 
+    // Resumes the current level
     public void resume() {
         level.start();
         gameMusic.resume();
     }
 
+    // Restarts the entire game
     public void restart(){
         level.stop();
         level = new Level1(this);
         level.populate(this);
         view.setWorld(level);
-        view.setZoom(20);
+        view.setZoom(16);
         view.setBack(level.paintBackground());
         controller.updateNinja(level.getGame());
         shootController.updateShoot(level.getGame());
@@ -117,42 +120,46 @@ public class Game {
         gameMusic.play();
     }
 
+    // Creates Level1
     public void level1(){
         level.stop();
         level = new Level1(this);
         level.populate(this);
         view.setWorld(level);
-        view.setZoom(20);
+        view.setZoom(16);
         view.setBack(level.paintBackground());
         controller.updateNinja(level.getGame());
         shootController.updateShoot(level.getGame());
         level.start();
     }
 
+    // Creates Level2
     public void level2(){
         level.stop();
         level = new Level2(this);
         level.populate(this);
         view.setWorld(level);
-        view.setZoom(20);
+        view.setZoom(16);
         view.setBack(level.paintBackground());
         controller.updateNinja(level.getGame());
         shootController.updateShoot(level.getGame());
         level.start();
     }
 
+    //Creates Level 3
     public void level3(){
         level.stop();
         level = new Level3(this);
         level.populate(this);
         view.setWorld(level);
-        view.setZoom(20);
+        view.setZoom(16);
         view.setBack(level.paintBackground());
         controller.updateNinja(level.getGame());
         shootController.updateShoot(level.getGame());
         level.start();
     }
 
+    // Sets the level
     public void setLevel(GameLevel level){
         // stop the current level
         this.level.stop();
@@ -161,11 +168,11 @@ public class Game {
         // change the view to look into new level
         view.setWorld(this.level);
         // zoom the view
-        view.setZoom(20);
+        view.setZoom(16);
         // add background to the world
         view.setBack(this.level.paintBackground());
         // update the banana count score
-        view.updateBanana(this.level.getNinja());
+        view.updateBanana(this.level.getGame());
         // change the controller to control the ninja in the new world
         controller.updateNinja(this.level.getGame());
         // updates the controller so that the ninja can shoot in the new world
@@ -174,6 +181,7 @@ public class Game {
         this.level.start();
     }
 
+    // Method to go to the next level
     public void goToNextLevel(){
 
         if (level instanceof Level1){
@@ -185,11 +193,11 @@ public class Game {
             // change the view to look into new level
             view.setWorld(level);
             // zoom the view
-            view.setZoom(20);
+            view.setZoom(16);
             // add background to the world
             view.setBack(level.paintBackground());
             // update the banana count score
-            view.updateBanana(level.getNinja());
+            view.updateBanana(level.getGame());
             // change the controller to control the ninja in the new world
             controller.updateNinja(level.getGame());
             // updates the controller so that the ninja can shoot in the new world
@@ -202,9 +210,9 @@ public class Game {
             level = new Level3(this);
             level.populate(this);
             view.setWorld(level);
-            view.setZoom(20);
+            view.setZoom(16);
             view.setBack(level.paintBackground());
-            view.updateBanana(level.getNinja());
+            view.updateBanana(level.getGame());
             controller.updateNinja(level.getGame());
             shootController.updateShoot(level.getGame());
             level.start();

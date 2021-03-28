@@ -88,19 +88,22 @@ public class Level3 extends GameLevel{
         }
     }
 
-
+    // Ninja needs to collect a certain amount of bananas to move to the next level
     @Override
     public boolean isComplete() {
         if (getNinja().getBananaCount() == 4)
             return true;
         else return false;
     }
+
+    // Paints the background of the level
     @Override
     public Image paintBackground(){
         Image background = new ImageIcon("data/Dungeon.png").getImage();
         return background;
     }
 
+    // Returns the level
     @Override
     public String getLevelName() {
         return "Level3";

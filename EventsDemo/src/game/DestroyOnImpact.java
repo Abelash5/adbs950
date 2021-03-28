@@ -20,6 +20,8 @@ public class DestroyOnImpact implements CollisionListener {
      * @param  collisionEvent An event were two or more objects are interfering with each other.
      */
 
+
+    // When the ninja is in contact with the bananas, a collision event occurs.
     @Override
     public void collide(CollisionEvent collisionEvent) {
         if (collisionEvent.getOtherBody() instanceof StaticBody

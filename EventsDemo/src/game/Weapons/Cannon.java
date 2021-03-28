@@ -19,7 +19,7 @@ public class Cannon extends Projectile implements ActionListener {
         smallCircle = new SolidFixture(this,s);
         this.setFillColor(Color.black);
 
-        Timer t = new Timer(100,this);
+        Timer t = new Timer(500,this);
         t.setInitialDelay(3000);
         t.start();
 

@@ -27,6 +27,7 @@ public class GameSaverLoader {
      * @return Returns the position of the bodies in the game. Also shows if the bananas have been picked up or not. In conclusion the stae of the game.
      */
 
+    // Saves the current level including the state of the bodies.
     public static void save(GameLevel level, String fileName)
             throws IOException
     {
@@ -88,6 +89,7 @@ public class GameSaverLoader {
      * @return Returns the position of the bodies in the game. Also shows if the bananas have been picked up or not. In conclusion the stae of the game.
      */
 
+    // Loads the game from where it was last saved.
     public static GameLevel load(Game game, String fileName)
             throws IOException
     {

@@ -50,9 +50,11 @@ public class NinjaController implements KeyListener {
         int code = e.getKeyCode();
         if (code == KeyEvent.VK_A) {
             game.getLevel().getNinja().startWalking(-WALKING_SPEED);
-        } else if (code == KeyEvent.VK_D) {
+        }
+        else if (code == KeyEvent.VK_D) {
             game.getLevel().getNinja().startWalking(WALKING_SPEED);
-        } else if (code == KeyEvent.VK_W) {
+        }
+        else if (code == KeyEvent.VK_W) {
             game.getLevel().getNinja().jump(10);
         }
         else if (code == KeyEvent.VK_S){
@@ -70,13 +72,13 @@ public class NinjaController implements KeyListener {
                 ioException.printStackTrace();
             }
         }
-        else if (code == KeyEvent.VK_0){
+        else if (code == KeyEvent.VK_1){
             game.getLevel().getNinja().setActiveWeapon(0);
         }
-        else if (code == KeyEvent.VK_1){
+        else if (code == KeyEvent.VK_2){
             game.getLevel().getNinja().setActiveWeapon(1);
         }
-        else if (code == KeyEvent.VK_2){
+        else if (code == KeyEvent.VK_3){
             game.getLevel().getNinja().setActiveWeapon(2);
         }
     }
@@ -112,6 +114,7 @@ public class NinjaController implements KeyListener {
      */
 
 
+    // Updates the ninja when moving to different levels.
     public void updateNinja(Game game){
         this.game = game;
     }
